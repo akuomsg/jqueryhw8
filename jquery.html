@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<h1> jQuery Assignment</h1>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#hide").click(function(){
+        $("#para1").hide();
+    });
+    $("#show").click(function(){
+        $("#para1").show();
+    });
+    $("#toggle").click(function(){
+        $("p").toggle();
+    });
+    $("#FadeInOut").click(function(){
+       $("#box").fadeToggle(1000);
+   });
+
+   $("#flip").click(function(){
+       $("#panel").slideToggle("slow");
+   });
+
+   $("#animate").click(function(){
+        var div = $("#animBox");
+        div.animate({height: '300px', opacity: '0.4'}, "slow");
+        div.animate({width: '300px', opacity: '0.8'}, "slow");
+        div.animate({height: '100px', opacity: '0.4'}, "slow");
+        div.animate({width: '100px', opacity: '0.8'}, "slow");
+    });
+
+});
+</script>
+
+<style>
+#panel, #flip {
+    padding: 5px;
+    text-align: center;
+    background-color: yellow;
+    border: solid 1px orange;
+    width: 30%;
+}
+
+#panel {
+    padding: 50px 0px 50px 10px;
+    display: none;
+}
+</style>
+
+</head>
+<body>
+
+<p id="para1" style="font-family: arial;">If you click on the "Hide" button, I will completely disappear.  If you click on the "Show" button, I will show up again.</p>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+
+<br>
+</br>
+<p>TOGGLE</p>
+<button id="toggle">Toggle between hiding and showing the paragraphs</button>
+
+<br>
+</br>
+<br>
+</br>
+<p>SLIDE</p>
+<div id="flip">Click to slide the panel down or up</div>
+<div id="panel" style="font-family:arial;">Hey do you see me sliding down here???</div>
+
+<br>
+</br>
+<p>FADE</p>
+<button id="FadeInOut">Click to fade in/out pink box</button><br><br>
+<div id="box" style="width:80px;height:80px;background-color:hotpink;"></div>
+<br>
+</br>
+<p>ANIMATE</p>
+<button id="animate">Begin blue box animation</button>
+<br>
+</br>
+<div id="animBox" style="background:cornflowerblue;height:200px;width:200px;position:absolute;"></div>
+
+</body>
+</html>
